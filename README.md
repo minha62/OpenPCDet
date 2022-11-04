@@ -14,3 +14,24 @@ pclpy Repository: [davidcaron/pclpy](https://github.com/davidcaron/pclpy)
 2. pcdet/datasets/kitti/kitti_dataset.py
 3. tools/cfgs/kitti_models/voxel_rcnn_car.yaml
 4. tools/cfgs/dataset_configs/kitti_dataset.yaml
+
+---
+
+### Commands
+
+~/OpenPCDet
+```
+$ python -m pcdet.datasets.kitti.kitti_dataset create_kitti_infos tools/cfgs/dataset_configs/kitti_dataset.yaml
+```
+
+~/OpenPCDet/tools
+```
+$ python train.py —cfg_file cfgs/kitti_models/voxel_rcnn_car.yaml —batch-size 1 —epochs 10000
+```
+
+~/OpenPCDet/demo
+```
+$ python demo.py --cfg_file cfgs/kitti_models/pv_rcnn.yaml \
+    --ckpt pv_rcnn_8369.pth \
+    --data_path ${POINT_CLOUD_DATA}
+```
