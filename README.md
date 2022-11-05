@@ -19,19 +19,22 @@ pclpy Repository: [davidcaron/pclpy](https://github.com/davidcaron/pclpy)
 
 ### Commands
 
-~/OpenPCDet
+- Generate the data infos
 ```
+$ cd ~/OpenPCDet
 $ python -m pcdet.datasets.kitti.kitti_dataset create_kitti_infos tools/cfgs/dataset_configs/kitti_dataset.yaml
 ```
 
-~/OpenPCDet/tools
+- Train with a single GPU
 ```
+$ cd ~/OpenPCDet/tools
 $ python train.py —cfg_file cfgs/kitti_models/voxel_rcnn_car.yaml —batch-size 1 —epochs 10000
 ```
 
-~/OpenPCDet/demo
+- Run the demo with the trained model and custom point cloud data
 ```
-$ python demo.py --cfg_file cfgs/kitti_models/pv_rcnn.yaml \
+$ cd ~/OpenPCDet/demo
+$ python demo.py --cfg_file cfgs/kitti_models/voxel_rcnn_car.yaml \
     --ckpt pv_rcnn_8369.pth \
     --data_path ${POINT_CLOUD_DATA}
 ```
