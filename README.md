@@ -19,16 +19,26 @@ pclpy Repository: [davidcaron/pclpy](https://github.com/davidcaron/pclpy)
 
 ### Commands
 
-- Generate the data infos
+- Convert pcd files to bin files
 ```
+$ conda activate pclpy
+$ python convert_pcd2bin.py
+$ conda deactivate
+```
+
+- Generate the data infos <br>
+kitti_dataset.yaml에서 DATA_PATH 변경해주기!
+```
+$ conda activate OpenPCDet
 $ cd ~/OpenPCDet
 $ python -m pcdet.datasets.kitti.kitti_dataset create_kitti_infos tools/cfgs/dataset_configs/kitti_dataset.yaml
 ```
 
-- Train with a single GPU
+- Train with a single GPU <br>
+voxel_rcnn_car.yaml, pv_rcnn.yaml 사용 <br> 
 ```
 $ cd ~/OpenPCDet/tools
-$ python train.py —cfg_file cfgs/kitti_models/voxel_rcnn_car.yaml —batch-size 1 —epochs 10000
+$ python train.py --cfg_file cfgs/kitti_models/voxel_rcnn_car.yaml --batch_size 1 --epochs 10000 
 ```
 
 - Run the demo with the trained model and custom point cloud data
@@ -38,3 +48,9 @@ $ python demo.py --cfg_file cfgs/kitti_models/voxel_rcnn_car.yaml \
     --ckpt pv_rcnn_8369.pth \
     --data_path ${POINT_CLOUD_DATA}
 ```
+
+<주의사항>
+> nas에 있는 파일을 불러오는 경우 permission denied 에러 뜰 수 있음. <br>
+> 이땐 `conda activate ${환경이름}`후에 python 명령어 쓰지 말고, `sudo ~/anaconda3/envs/${환경이름}/bin/python` 뒤에 명령어 쓰기 <br>
+> ex) python convert_pcd2bin.py 대신 sudo ~/anaconda3/envs/pclpy/bin/python convert_pcd2bin.py
+
