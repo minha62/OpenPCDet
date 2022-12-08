@@ -9,7 +9,7 @@ pclpy Repository: [davidcaron/pclpy](https://github.com/davidcaron/pclpy)
 
 ### Change Record
 
-1. Add a file [convert_pcd2bin.py](https://github.com/minha62/OpenPCDet/blob/3f85e15a7fd496f2ef6e7696f48eea763521e6ef/convert_pcd2bin.py) <br>
+1. Add a file [convert_pcd2bin.py](https://github.com/minha62/OpenPCDet/blob/master/convert_pcd2bin.py) <br>
   📌 need `pclpy`
 2. pcdet/datasets/kitti/kitti_dataset.py
 3. tools/cfgs/kitti_models/voxel_rcnn_car.yaml
