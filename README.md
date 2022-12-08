@@ -14,7 +14,7 @@ pclpy Repository: [davidcaron/pclpy](https://github.com/davidcaron/pclpy)
 2. pcdet/datasets/kitti/kitti_dataset.py
 3. tools/cfgs/kitti_models/voxel_rcnn_car.yaml
 4. tools/cfgs/dataset_configs/kitti_dataset.yaml
-5. Add a file [match_label.py](https://github.com/minha62/OpenPCDet/blob/3f85e15a7fd496f2ef6e7696f48eea763521e6ef/match_label.py)
+5. Add a file [match_label.py](https://github.com/minha62/OpenPCDet/blob/master/match_label.py)
    - label이 없는 calib, image, velodyne 파일 삭제
 
 ---
