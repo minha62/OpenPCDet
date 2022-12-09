@@ -45,7 +45,7 @@ $ python train.py --cfg_file cfgs/kitti_models/voxel_rcnn_car.yaml --batch_size 
 
 - Run the demo with the trained model and custom point cloud data
 ```
-$ cd ~/OpenPCDet/demo
+$ cd ~/OpenPCDet/tools
 $ python demo.py --cfg_file cfgs/kitti_models/voxel_rcnn_car.yaml \
     --ckpt pv_rcnn_8369.pth \
     --data_path ${POINT_CLOUD_DATA}
