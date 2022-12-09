@@ -51,6 +51,16 @@ $ python demo.py --cfg_file cfgs/kitti_models/voxel_rcnn_car.yaml \
     --data_path ${POINT_CLOUD_DATA}
 ```
 
+- Test and evaluate the trained models
+   - To test the specific checkpoint, use `--ckpt ${CKPT}`
+   - To test all the saved checkpoints, use `--eval_all`
+```
+$ python test.py --cfg_file ${CONFIG_FILE} --batch_size ${BATCH_SIZE} --ckpt ${CKPT}
+$ python test.py --cfg_file ${CONFIG_FILE} --batch_size ${BATCH_SIZE} --eval_all
+```
+
+
+
 <주의사항>
 > nas에 있는 파일을 불러오는 경우 permission denied 에러 뜰 수 있음. <br>
 > 이땐 `conda activate ${환경이름}`후에 python 명령어 쓰지 말고, `sudo ~/anaconda3/envs/${환경이름}/bin/python` 뒤에 명령어 쓰기 <br>
