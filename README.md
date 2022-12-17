@@ -64,5 +64,5 @@ $ python test.py --cfg_file ${CONFIG_FILE} --batch_size ${BATCH_SIZE} --eval_all
 <주의사항>
 > nas에 있는 파일을 불러오는 경우 permission denied 에러 뜰 수 있음. <br>
 > 이땐 `conda activate ${환경이름}`후에 python 명령어 쓰지 말고, `sudo ~/anaconda3/envs/${환경이름}/bin/python` 뒤에 명령어 쓰기 <br>
-> ex) python convert_pcd2bin.py 대신 sudo ~/anaconda3/envs/pclpy/bin/python convert_pcd2bin.py
+> ex) `python convert_pcd2bin.py` 대신 `sudo ~/anaconda3/envs/pclpy/bin/python convert_pcd2bin.py`
 
